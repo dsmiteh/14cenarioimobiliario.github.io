@@ -1,0 +1,76 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Estilos para as abas */
+    .tab {
+      overflow: hidden;
+      background-color: #f1f1f1;
+    }
+
+    /* Estilos para os links das abas */
+    .tab a {
+      display: inline-block;
+      background-color: inherit;
+      color: black;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      border: none;
+      transition: 0.3s;
+    }
+
+    /* Estilos para os links das abas quando estão ativos */
+    .tab a.active {
+      background-color: #ccc;
+    }
+
+    /* Estilos para o conteúdo das abas */
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      border-top: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="tab">
+    <a href="javascript:void(0);" class="tablinks" onclick="openTab(event, 'Tab1')">Aba 1</a>
+    <a href="javascript:void(0);" class="tablinks" onclick="openTab(event, 'Tab2')">Aba 2</a>
+    <a href="javascript:void(0);" class="tablinks" onclick="openTab(event, 'Tab3')">Aba 3</a>
+  </div>
+
+  <div id="Tab1" class="tabcontent">
+    <h3>Conteúdo da Aba 1</h3>
+    <p>Este é o conteúdo da Aba 1.</p>
+  </div>
+
+  <div id="Tab2" class="tabcontent">
+    <h3>Conteúdo da Aba 2</h3>
+    <p>Este é o conteúdo da Aba 2.</p>
+  </div>
+
+  <div id="Tab3" class="tabcontent">
+    <h3>Conteúdo da Aba 3</h3>
+    <p>Este é o conteúdo da Aba 3.</p>
+  </div>
+
+  <script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+  </script>
+</body>
+</html>
